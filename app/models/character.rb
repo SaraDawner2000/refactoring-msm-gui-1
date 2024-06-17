@@ -10,4 +10,9 @@
 #  movie_id   :integer
 #
 class Character < ApplicationRecord
+  def movie
+    id = self.movie_id
+    character_movie = Movie.where(id:).first
+    character_movie
+  end
 end
